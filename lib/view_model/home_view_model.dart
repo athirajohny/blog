@@ -26,5 +26,5 @@ class HomeViewModel with ChangeNotifier{
   changeStatus(statusData) {
     status = statusData;
     notifyListeners();
-  }m
+  }
 }

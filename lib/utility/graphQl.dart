@@ -7,7 +7,7 @@ import 'dart:convert';
 
 
 class GraphQLConfiguration{
-  HttpLink httpLink = HttpLink((ApiEndpoint()).graphQlUrl),
+  HttpLink httpLink = HttpLink((ApiEndpoint()).graphQlUrl);
 
   ValueNotifier<GraphQLClient> initailizeClient(){
     ValueNotifier<GraphQLClient> client = ValueNotifier(
