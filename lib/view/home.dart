@@ -74,7 +74,6 @@ return Consumer<HomeViewModel>(
               }),
         );
       }
-
   }
 );
 }

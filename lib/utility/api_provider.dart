@@ -1,6 +1,5 @@
 import 'package:blog/utility/graphQl.dart';
 import 'package:blog/utility/query_mutation.dart';
-import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class ApiProvider{
@@ -16,6 +15,20 @@ class ApiProvider{
   );
   if (result.hasException) {
    print('Exception in api_provider.dart');
+  } else {
+   //_posts = Posts.fromJson(result.data["postsQuery"]);
+  }
+ }
+
+ details() async{
+  GraphQLConfiguration graphQLConfiguration = GraphQLConfiguration();
+  GraphQLClient _client = graphQLConfiguration.clientToQuery();
+  QueryResult result = await _client.mutate(
+   MutationOptions(document: gql(addMutation.details()),
+   ),
+  );
+  if (result.hasException) {
+   print('Exception in  details api_provider.dart');
   } else {
    //_posts = Posts.fromJson(result.data["postsQuery"]);
   }
